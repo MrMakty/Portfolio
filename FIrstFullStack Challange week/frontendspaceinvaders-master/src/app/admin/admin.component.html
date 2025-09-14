@@ -1,0 +1,31 @@
+<h2>Admin Panel – Dock Maintenance & Reservations</h2>
+
+<div class="dock-input">
+  <label for="dockId">Dock ID (1–24):</label>
+  <input
+    type="number"
+    id="dockId"
+    [(ngModel)]="dockId"
+    min="1"
+    max="24"
+    (ngModelChange)="fetchDockStatus()"
+  />
+
+  <button
+    (click)="toggleMaintenance()"
+    [disabled]="dockId === null"
+  >
+    {{ dockStatus?.inMaintenance ? 'Haal van maintenance af' : 'Zet op maintenance' }}
+  </button>
+
+  <button
+    (click)="cancelAllReservations()"
+    [disabled]="dockId === null"
+  >
+    {{ 'annuleer.alles' | translate }}
+  </button>
+</div>
+
+@if (message) {
+  <p>{{ message }}</p>
+}

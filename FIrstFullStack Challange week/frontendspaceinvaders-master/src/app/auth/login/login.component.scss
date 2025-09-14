@@ -1,0 +1,91 @@
+$primary-color: #ffe81f;
+$accent-color: #00bcd4;
+@use "sass:color";
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.login-card {
+  background-color: #111;
+  border: 2px solid $primary-color;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 350px;
+  box-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      label {
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+        color: $primary-color;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.4rem;
+        background: #222;
+        border: 1px solid $primary-color;
+        border-radius: 0.5rem;
+        color: #fff;
+        outline: none;
+        transition: box-shadow 0.3s;
+
+        &:focus {
+          box-shadow: 0 0 10px 5px color.adjust(#00bcd4, $lightness: 10%);
+        }
+      }
+    }
+
+    button[type="submit"] {
+      margin-top: 1rem;
+      padding: 0.6rem;
+      background: $primary-color;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px $primary-color;
+
+      &:hover {
+        background: color.adjust($primary-color, $lightness: -10%);
+        box-shadow: 0 0 15px $primary-color;
+      }
+    }
+  }
+
+  .register-btn {
+    margin-top: 1rem;
+    padding: 0.6rem;
+    background: transparent;
+    color: $accent-color;
+    border: 1px solid $accent-color;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $accent-color;
+      color: #000;
+      box-shadow: 0 0 10px $accent-color;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<main>
+  <section class="main-section">
+    <article class="profile-card">
+      <section>
+        <h1>{{ 'mijn.profiel' | translate }}</h1>
+        <button (click)="toAdminPageCheck()" [disabled]="!ifFalseDisableButton">admin</button>
+        <button (click)="logout()">{{ 'uitloggen' | translate}}</button>
+      </section>
+      <section class="profile-section">
+        <app-profile-information></app-profile-information>
+      </section>
+    </article>
+
+    <section class="reservation-card">
+      <section class="reservation-section">
+        <app-my-reservation-list></app-my-reservation-list>
+      </section>
+    </section>
+    <section class="reservation-card">
+      <section class="reservation-section">
+        <app-my-ship-list></app-my-ship-list>
+      </section>
+    </section>
+  </section>
+</main>

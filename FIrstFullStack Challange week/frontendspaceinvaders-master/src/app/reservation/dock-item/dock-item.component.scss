@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.timeline-day {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.day-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.time-slots {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.time-slots div {
+  flex: 1;
+  height: 30px;
+  margin-right: 2px;
+  cursor: pointer;
+  border: 1px solid #555;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.time-slots div.reserved {
+  background-color: red;
+}
+
+.time-slots div.available {
+  background-color: green;
+}
+
+.time-slots div.disabled {
+  background-color: #555; /* Grijs voor niet-selecteerbare tijdslots */
+  cursor: not-allowed;
+}
+
+.time-slots div:hover:not(.disabled) {
+  opacity: 0.8;
+}
+
+.time-label {
+  position: absolute;
+  top: -20px; /* Plaats de tijd boven de blokjes */
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
+
+h3 {
+  margin-top: 1rem;
+}
+
+.selected-slot {
+  background-color: #ffeb3b; /* Geel voor geselecteerde slot */
+  border: 2px solid #fbc02d; /* Donkerder geel voor de rand */
+}
+
+.confirmation {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #333;
+  border-radius: 4px;
+}

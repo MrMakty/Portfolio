@@ -1,0 +1,61 @@
+$background-dark: #0b0c10;
+$highlight-yellow: #ffe81f;
+$text-light: #f0f0f0;
+$link-blue: #00bcd4;
+$link-hover: #40e0d0;
+
+.starwars-footer {
+  background-color: $background-dark;
+  color: $text-light;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-top: 3px solid $highlight-yellow;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+
+      a {
+        color: $link-blue;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: $link-hover;
+          text-decoration: underline;
+        }
+
+        &:focus {
+          outline: 2px solid $highlight-yellow;
+          outline-offset: 2px;
+        }
+      }
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      max-width: 130px;
+      height: auto;
+      filter: brightness(1.2) contrast(1.1);
+      border: 2px solid $highlight-yellow;
+      border-radius: 6px;
+      padding: 0.2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+

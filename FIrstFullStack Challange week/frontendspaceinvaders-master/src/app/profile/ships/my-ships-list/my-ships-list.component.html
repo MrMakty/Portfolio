@@ -1,0 +1,7 @@
+<section>
+  @for (spaceship of user?.spaceships; track spaceship.shipId) {
+    <li>
+      <app-my-ships-item [spaceship]="spaceship"></app-my-ships-item>
+    </li>
+  }
+</section>

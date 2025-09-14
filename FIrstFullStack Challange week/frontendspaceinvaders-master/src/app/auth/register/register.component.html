@@ -1,0 +1,109 @@
+<main>
+  <h1>{{ 'naar.registreren' | translate }}</h1>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="account-info">
+      <section>
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" id="email">
+        @if (registerForm.get('email')?.touched && registerForm.get('email')?.invalid){
+          @if (registerForm.get('email')?.errors?.['required']){
+            <span>{{ 'moet.invullen' | translate }}</span>
+          } @else if (registerForm.get('email')?.errors?.['email']){
+            <span>{{ 'ongeldig.email' | translate }}</span>
+          }
+        }
+      </section>
+
+      <section>
+        <label for="password">{{ 'wachtwoord' | translate }}:</label>
+        <input type="password" formControlName="password" id="password">
+        @if (registerForm.get('password')?.touched && registerForm.get('password')?.invalid){
+          @if(registerForm.get('password')?.errors?.['required']){
+            <span>{{ 'moet.invullen' | translate }}</span>
+          } @else if (registerForm.get('password')?.errors?.['minlength']) {
+            <span>{{ 'lengte.wachtwoord' | translate }}</span>
+          } @else if (registerForm.get('password')?.errors?.['pattern']){
+            <span>{{ 'vereiste.wachtwoord' | translate }}</span>
+          }
+        }
+      </section>
+
+      <section>
+        <label for="firstName">{{ 'voornaam' | translate }}:</label>
+        <input type="text" formControlName="firstName" id="firstName">
+        @if (registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid){
+          <span>{{ 'moet.invullen' | translate }}</span>
+        }
+      </section>
+
+      <section>
+        <label for="lastName">{{ 'achternaam' | translate }}:</label>
+        <input type="text" formControlName="lastName" id="lastName">
+        @if (registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid){
+          <span>{{ 'moet.invullen' | translate }}</span>
+        }
+      </section>
+
+      <section>
+        <label for="occupation">{{ 'beroep' | translate }}:</label>
+        <input type="text" formControlName="occupation" id="occupation">
+        @if (registerForm.get('occupation')?.touched && registerForm.get('occupation')?.invalid){
+          <span>{{ 'moet.invullen' | translate }}</span>
+        }
+      </section>
+    </div>
+    <div class="ship-info">
+      <section>
+        <label for="shipname">{{ 'schipnaam' | translate }}</label>
+        <input type="text" formControlName="shipname" id="shipname">
+        @if (registerForm.get('shipname')?.touched && registerForm.get('shipname')?.invalid){
+          <span>{{ 'moet.invullen' | translate }}</span>
+        }
+      </section>
+
+      <section>
+        <label for="function">{{ 'functie' | translate }}</label>
+        <select formControlName="function" id="function">
+          <option value="" disabled selected>{{ 'kies.functie' | translate }}</option>
+          <option value="MILITARY">{{ 'militair' | translate }}</option>
+          <option value="CITIZEN">{{ 'burger' | translate }}</option>
+          <option value="TRADER">{{ 'handel' | translate }}</option>
+          <option value="TRADER_DANGEROUS">{{ 'gevaarlijk' | translate }}</option>
+        </select>
+        @if (registerForm.get('function')?.touched && registerForm.get('function')?.invalid){
+        }
+      </section>
+
+      <section>
+        <label for="size">{{ 'grootte' | translate }}</label>
+        <select formControlName="size" id="size">
+          <option value="" disabled selected>{{ 'kies.grootte' | translate }}</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
+        @if (registerForm.get('size')?.touched && registerForm.get('size')?.invalid){
+        }
+      </section>
+
+      <section>
+        <label for="imagePath">{{ 'plaatje.weg' | translate }}</label>
+        <input type="text" formControlName="imagePath" id="imagePath">
+        @if (registerForm.get('imagePath')?.touched && registerForm.get('imagePath')?.invalid){
+          <span>{{ 'moet.invullen' | translate }}</span>
+        }
+      </section>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">{{ 'naar.registreren' | translate }}</button>
+
+    <section id="error-register">
+      @if (this.error === null){
+      } @else {
+        <p>{{ 'foutmelding' | translate }}</p>
+      }
+    </section>
+
+  </form>
+</main>

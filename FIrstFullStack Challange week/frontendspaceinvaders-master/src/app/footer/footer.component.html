@@ -1,0 +1,13 @@
+<footer class="starwars-footer" role="contentinfo">
+  <div class="team-info">
+    <ul>
+      <li *ngFor="let member of teamMembers">
+        {{ member.name }}, {{ member.studentNr }}, <a [href]="'mailto:' + member.email">{{ member.email }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="logo-container">
+    <img src="/images/hogeschoolLeidenLogo.jpg" class="logo" alt="Hogeschool Leiden Logo" />
+  </div>
+</footer>

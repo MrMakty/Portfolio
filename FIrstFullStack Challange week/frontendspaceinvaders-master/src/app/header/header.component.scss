@@ -1,0 +1,87 @@
+// Kleuren gebaseerd op Star Wars-thema
+$background-dark: #0b0c10;
+$highlight-yellow: #ffe81f;
+$accent-blue: #00bcd4;
+$text-light: #f0f0f0;
+$focus-outline: #ff5722;
+
+.starwars-header {
+  background-color: $background-dark;
+  color: $text-light;
+  padding: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  border-bottom: 3px solid $highlight-yellow;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.buttons-left, .buttons-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.flag-button, .nav-button, .profile-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: transform 0.2s ease;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid $focus-outline;
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.flag {
+  height: 6vh;
+  border: 2px solid $highlight-yellow;
+  border-radius: 4px;
+}
+
+.profile-icon {
+  height: 6vh;
+  //filter: grayscale(100%) brightness(1.2);
+  border: 5px solid $accent-blue;
+  border-radius: 50%;
+  padding: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-button {
+  color: $text-light;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 2px solid $accent-blue;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $accent-blue;
+    color: $background-dark;
+  }
+}
+
+.title-text {
+  margin-top: 1rem;
+  text-align: center;
+
+  p {
+    margin: 0.2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $highlight-yellow;
+    text-shadow: 0 0 5px $highlight-yellow;
+  }
+}

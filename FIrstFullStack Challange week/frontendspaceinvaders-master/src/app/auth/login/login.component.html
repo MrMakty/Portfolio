@@ -1,0 +1,19 @@
+<section class="login-page">
+  <section class="login-card">
+    <form (ngSubmit)="login()">
+        <section>
+          <label>Email:</label>
+          <input type="text" name="email" [(ngModel)]="email">
+        </section>
+        <section>
+          <label>{{ 'wachtwoord' | translate  }}:</label>
+          <input type="password" name="password"  [(ngModel)]="password">
+        </section>
+        <button type="submit">Login</button>
+    </form>
+    <button type="button" class="register-btn" (click)="navigateToRegister()">
+      {{ 'naar.registreren' | translate }}
+    </button>
+  </section>
+</section>
+

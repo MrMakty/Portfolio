@@ -1,0 +1,24 @@
+<header class="starwars-header">
+  <nav class="button-container" aria-label="Taal- en navigatieopties">
+    <div class="buttons-left">
+      <button (click)="useLanguage('nl')" class="flag-button" aria-label="Wissel taal naar Nederlands">
+        <img src="/images/dutchFlag.jpg" alt="Nederlands" class="flag" />
+      </button>
+      <button (click)="useLanguage('en')" class="flag-button" aria-label="Switch language to English">
+        <img src="/images/unitedKingdomFlag.jpg" alt="English" class="flag" />
+      </button>
+    </div>
+
+    <div class="buttons-right">
+      <button (click)="navigateToHomepage()" class="nav-button">{{ 'hoofdpagina' | translate }}</button>
+      <button (click)="navigateToProfile()" class="profile-button" aria-label="Ga naar profiel">
+        <img src="/images/ProfileIcon.png" alt="Profiel" class="profile-icon" />
+      </button>
+    </div>
+  </nav>
+
+  <div class="title-text">
+    <p>{{ 'welkom.bij' | translate }}</p>
+    <p>SPACE INVADERS</p>
+  </div>
+</header>

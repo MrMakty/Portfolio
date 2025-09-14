@@ -1,0 +1,109 @@
+$primary-color: #ffe81f;
+@use "sass:color";
+
+main {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $primary-color;
+    //text-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  form {
+    background-color: #111;
+    border: 2px solid $primary-color;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .account-info,
+    .ship-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+
+      section {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          color: $primary-color;
+          font-weight: bold;
+          margin-bottom: 0.3rem;
+        }
+
+        input,
+        select {
+          background: #222;
+          border: 1px solid $primary-color;
+          border-radius: 0.5rem;
+          padding: 0.6rem;
+          color: #fff;
+          outline: none;
+          transition: box-shadow 0.3s;
+
+          &:focus {
+            box-shadow: 0 0 10px 5px color.adjust(#00bcd4, $lightness: 10%);
+          }
+        }
+
+        span {
+          color: #ff4c4c;
+          font-size: 0.85rem;
+          margin-top: 0.3rem;
+        }
+      }
+    }
+
+    button[type="submit"] {
+      align-self: center;
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background: $primary-color;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px $primary-color;
+
+      &:hover {
+        background: color.adjust($primary-color, $lightness: -10%);
+        box-shadow: 0 0 15px $primary-color;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+    }
+
+    #error-register {
+      text-align: center;
+      color: #ff4c4c;
+      font-weight: bold;
+      margin-top: 1rem;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

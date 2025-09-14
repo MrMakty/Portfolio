@@ -1,0 +1,64 @@
+<div *ngIf="status === 'MAINTENANCE'">
+  <p> {{ 'in.onderhoud' | translate }} </p>
+</div>
+
+<div *ngIf="status === 'RESERVED' && reservedUntil">
+  <p>{{ 'in.reservering' | translate }} : {{ reservedUntil | date:'short' }}</p>
+  <label>
+    {{ 'starttijd' | translate }} :
+    <input type="datetime-local" [(ngModel)]="reservationStart" [min]="minDate" />
+  </label>
+  <label>
+    {{ 'duur' | translate }} :
+    <input type="number" [(ngModel)]="durationHours" min="1" max="24" />
+  </label>
+  <button (click)="submitReservation()">{{ 'reserveren.vanaf' | translate }} </button>
+</div>
+
+<div *ngIf="status === 'AVAILABLE' && availableFrom">
+  <p>{{ 'beschikbaar.tot' | translate }} : {{ availableFrom | date:'short' }}</p>
+  <label>
+    {{ 'starttijd' | translate }} :
+    <input type="datetime-local" [(ngModel)]="reservationStart" [min]="minDate" />
+  </label>
+  <label>
+    {{ 'duur' | translate }} :
+    <input type="number" [(ngModel)]="durationHours" min="1" max="24" />
+  </label>
+  <button (click)="submitReservation()">{{ 'reserveer' | translate }} </button>
+</div>
+
+<!-- Tijdlijn -->
+<div class="timeline">
+  <div class="timeline-header">
+    <button (click)="changeDays(-1)" [disabled]="isFirstDay()">{{ 'afgelopen.3.dagen' | translate }} </button>
+    <button (click)="changeDays(1)">{{ 'volgende.3.dagen' | translate }}</button>
+  </div>
+  <div class="timeline-body">
+    <div *ngFor="let day of displayedDays" class="timeline-day">
+      <div class="day-label">{{ day | date: 'shortDate' }}</div>
+      <div class="time-slots">
+        <div *ngFor="let slot of getTimeSlots(day)"
+             [ngClass]="{
+               'reserved': isReserved(slot),
+               'available': !isReserved(slot) && isFuture(slot),
+               'disabled': !isFuture(slot)
+             }"
+             (click)="selectTimeSlot(slot)">
+<!--          <span class="time-label">{{ slot | date: 'h a' }}</span>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bevestiging van de reservering -->
+<div *ngIf="selectedSlot" class="confirmation">
+  <h3>{{ 'bevestiging' | translate }}</h3>
+  <p>{{ 'selectie' | translate }}: {{ selectedSlot | date: 'short' }}</p>
+  <label>
+    {{ 'duur' | translate }}:
+    <input type="number" [(ngModel)]="durationHours" min="1" max="24" />
+  </label>
+  <button (click)="confirmReservation()">{{ 'bevestiging' | translate }}</button>
+</div>

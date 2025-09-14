@@ -1,0 +1,41 @@
+<div class="spaceship-selection">
+  <label>{{ 'kies.schip' | translate}}:</label>
+  <div class="spaceship-grid">
+    <div
+      class="spaceship-card"
+      *ngFor="let spaceship of spaceships"
+      [class.selected]="selectedSpaceship === spaceship"
+      (click)="selectedSpaceship = spaceship!"
+    >
+      <div class="ship-content">
+        <h3>{{ spaceship.shipName }}</h3>
+        <p>{{ spaceship.shipType }}</p>
+        <p>Grootte: {{ spaceship.size }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="level-switch">
+  <button [class.active]="selectedLevel === 1" (click)="switchLevel(1)">Level 1</button>
+  <button [class.active]="selectedLevel === 2" (click)="switchLevel(2)">Level 2</button>
+</div>
+
+<div class="docking-map">
+  <div class="center-circle"></div>
+
+  <ng-container *ngFor="let dock of docks">
+    <button
+      *ngIf="dock.level === selectedLevel"
+      [ngStyle]="getPolarPosition(dock.angle)"
+      [ngClass]="[
+        'dock',
+        dock.size.toLowerCase(),
+        dock.status.toLowerCase()
+      ]"
+      [title]="'Dock ' + dock.id + ' (' + dock.status + ')'"
+      (click)="openModal(dock)"
+    >
+      {{ dock.size }}
+    </button>
+  </ng-container>
+</div>

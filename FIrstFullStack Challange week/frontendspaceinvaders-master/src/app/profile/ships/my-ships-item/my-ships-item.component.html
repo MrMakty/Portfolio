@@ -1,0 +1,12 @@
+<section>
+  <h3>Naam: {{ spaceship.shipName }}</h3>
+  <h3>Type: {{ spaceship.shipType }}</h3>
+  <h3>Grootte: {{ spaceship.size }}</h3>
+  <h3>Image: {{ spaceship.imagePath }}</h3>
+  <img
+    src="{{ spaceship.imagePath }}"
+    alt="Spaceship Image"
+    onerror="this.onerror=null; this.src='images/spaceships/base.png';"
+    class="spaceship-image"
+  />
+</section>

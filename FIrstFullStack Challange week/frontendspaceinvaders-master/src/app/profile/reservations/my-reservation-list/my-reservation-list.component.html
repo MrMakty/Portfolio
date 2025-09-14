@@ -1,0 +1,8 @@
+<section>
+  <h2>{{ 'mijn.reservering' | translate }}</h2>
+  <li *ngFor="let reservation of currentReservations; trackBy: trackById">
+    <app-my-reservation-item [reservation]="reservation"></app-my-reservation-item>
+    <button (click)="cancelReservation(reservation.id)">Cancel</button>
+  </li>
+
+</section>

@@ -1,0 +1,79 @@
+$primary-color: #ffe81f;
+$accent-color: #00bcd4;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #000;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+  background-color: #000; // verwijder de sterrenachtergrond
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.profile-card, .reservation-card {
+  background-color: #111; // deep blackish grey
+  border: 2px solid $primary-color;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 10px $primary-color, 0 0 20px rgba(255, 232, 31, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+
+  h1 {
+    color: $primary-color;
+    font-size: 2rem;
+    text-shadow: 0 0 5px $primary-color;
+  }
+
+  button {
+    padding: 0.6rem 1.2rem;
+    background-color: transparent;
+    border: 2px solid $accent-color;
+    color: $accent-color;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0.3rem;
+
+    &:hover {
+      background-color: $accent-color;
+      color: #000;
+      box-shadow: 0 0 10px $accent-color;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.reservation-section {
+  width: 100%;
+}
