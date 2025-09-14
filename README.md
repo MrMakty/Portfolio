@@ -1,3 +1,0 @@
-Bij deze schoolopdracht was het de bedoeling om aan de hand van de activiteiten die je deed tijdens de periode een kleine webpagina opstelde waarin je een vorm van blog/verslag weergaf van wat je aan het project gedaan had. Dit moest gebeuren door gebruik te maken van HTML, CSS en Javascript.
-De omliggende opdracht was dat je met een groep een escaperoom moest maken door middel van gebruik te maken van een raspberryPi en hardwarecomponenten die we kregen van de school.
-Dit is de uitwerking van mijn persoonlijke website. Er is een kleine navigateibalk aan de bovenkant van de website waarmee je naar verschillende onderdelen van de website kan gaan, maar dit kan ook gebreuren door gebruik te op de verschillende tafels van de rechterafbeelding te drukken.
