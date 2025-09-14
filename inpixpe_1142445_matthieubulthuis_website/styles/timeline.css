@@ -1,0 +1,267 @@
+.Joffrey{
+    font-family: 'In your face, Joffrey!',monospace;
+    font-size: 25px;
+}
+
+.vcr{
+    font-family: 'VCR OSD Mono', monospace;
+}
+
+body {
+    background-color: #1D35CF;
+}
+
+.headers {
+    display: flex;
+    background-color: #6C6C6C;
+    color: white;
+    justify-content: space-around;
+    font-family: 'In your face, Joffrey!',monospace;
+}
+
+.interactive{
+    cursor: pointer;
+    font-family: 'VCR OSD Mono', monospace;
+}
+
+.active{
+    background-color: aqua;
+}
+
+.weekbutton:hover{
+    transform: scale(1.3);
+}
+
+section {
+    background-color: #B3B4A4;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.cafetaria_img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay{
+    position: absolute;
+}
+
+.table-event{
+    background-color: transparent;
+    border: none;
+}
+
+.tabletime{
+    font-size: 1.4vw;
+    top: 22%;
+    left: 35%;
+}
+
+.tableblog{
+    font-size: 1.4vw;
+    bottom: 30%;
+    left: 35%;
+}
+
+.arrow{
+    top: 43%;
+    left: 6%;
+    width: 15%;
+    height: auto;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.avatar{
+    top: 30%;
+    left: 35%;
+    width: 20%;
+    height: auto;
+}
+
+.weekmenu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #6C6C6C;
+}
+
+.weekbutton {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #B3B4A4;
+    border: none;
+    text-align: left;
+}
+
+#display {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #B3B4A4;
+    margin-bottom: 1vw;
+    border-radius: 10px;
+    font-family: 'VCR OSD Mono', monospace;
+}
+
+
+@keyframes moveAcross {
+from {
+    left: -10%;
+}
+to {
+    left: 100%;
+}
+}
+
+@media only screen and (min-width:950px){
+    .full_cafetaria {
+        position: relative;
+        left: 70%;
+        width: 30%;
+    }
+ 
+    .tablebutton{
+        font-size: 1.4vw;
+        top: 44%;
+        right: 4vw;
+    }
+
+    .display{
+        position: absolute;
+        left: 8px;
+        width: 68.5%;
+    }
+
+    body{
+        background-image: url(../styles/assets/images/Among_Us_cover_art.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left;
+        background-size:40%;
+    }
+
+    .background{
+        display: none
+    }
+
+    .gif-container {
+        position: fixed;
+        left: 0;
+        transform: translateY(-50%);
+        display: none;
+        position: fixed;
+        bottom: 0%;
+        height: 10%;
+        background-color: transparent;
+        z-index: -1;
+    }
+    
+    .animated-gif {
+    width: 100px;
+    height: auto;
+    }
+
+    .move {
+    display: block;
+    animation: moveAcross 3s linear forwards;
+    }
+}
+
+@media only screen and (min-width:600px) and (max-width:950px){
+    .full_cafetaria {
+        position: relative;
+        top: 100%;
+        left: 70%;
+        width: 30%;
+      }
+      
+    .tablebutton{
+        font-size: 1.4vw;
+        top: 44%;
+        right: 4vw;
+      }
+      
+    .display{
+        position: absolute;
+        left: 8px;
+        width: 67%;
+        padding-left: 5px;
+        margin-bottom: 5vw;
+      }
+    
+      
+    .background{
+        position: fixed;
+        bottom: 0%;
+        right: 0%;
+        z-index: -1;
+        height: 40%;
+      }
+
+    .gif-container {
+        position: fixed;
+        left: 0;
+        transform: translateY(-50%);
+        display: none;
+        position: fixed;
+        bottom: 0%;
+        height: 10%;
+        background-color: transparent;
+        z-index: -1;
+    }
+    
+    .animated-gif {
+        width: 100px;
+        height: auto;
+    }
+
+    .move {
+        display: block;
+        animation: moveAcross 1s linear forwards;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .full_cafetaria {
+        position: relative;
+        top: 100%;
+        right: 0%;
+        left: 77%;
+        width: 23%;
+    }
+    
+    .tablebutton{
+        font-size: 1.4vw;
+        top: 44%;
+        right: 2.9vw;
+    }
+    
+    .display{
+        position: absolute;
+        left: 8px;
+        width: 74.1%;
+    }
+    
+    .gif-container {
+        position: fixed;
+        left: 0;
+        transform: translateY(-50%);
+        display: none;
+        position: fixed;
+        bottom: 0%;
+        height: 6%;
+        background-color: transparent;
+        z-index: -1;
+    }
+    
+    .animated-gif {
+    width: 60px;
+    height: auto;
+    }
+
+    .move {
+    display: block;
+    animation: moveAcross 1s linear forwards;
+    }
+}

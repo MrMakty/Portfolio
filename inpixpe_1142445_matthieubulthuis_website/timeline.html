@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS" />
+    <link rel="stylesheet" href="styles/timeline.css" />
+    <title>Cafetaria</title>
+  </head>
+  <body>
+    <header>
+      <section class="headers">
+        <a href="cafetaria.html" class="interactive">Hoofdpagina</a>
+        <a href="blogs.html" class="interactive">Blogpagina</a>
+        <a href="timeline.html" class="interactive active">Tijdlijn</a>
+      </section>
+    </header>
+    <main>
+      <section class="weekmenu">
+        <button class="weekbutton interactive" data-week="1">Week 1</button>
+        <button class="weekbutton interactive" data-week="2">Week 2</button>
+        <button class="weekbutton interactive" data-week="3">Week 3</button>
+        <button class="weekbutton interactive" data-week="4">Week 4</button>
+        <button class="weekbutton interactive" data-week="5">Week 5</button>
+      </section>
+      <section class="display">
+        <article id="display">
+          <p>Hover over een week om te zien wat er in die week is gebeurd</p>
+        </article>
+      </section>
+      <section class="full_cafetaria">
+        <img
+          src="styles/assets/images/desktop_cafetaria.png"
+          alt="cafetaria uit Among Us"
+          class="cafetaria_img"
+        />
+        <img
+          src="styles/assets/images/Yellow_task_arrow.webp"
+          alt="Yello task arrow"
+          class="overlay arrow interactive"
+        />
+        <img
+          src="styles/assets/images/avatar.png"
+          alt="Blauwe avatar van Among Us"
+          class="overlay avatar"
+        />
+        <form action="timeline.html">
+          <input
+            type="submit"
+            class="table-event tabletime overlay interactive"
+            value="Timeline"
+          />
+        </form>
+        <form action="blogs.html">
+          <input
+            type="submit"
+            class="table-event tableblog overlay interactive"
+            value="Blogs"
+          />
+        </form>
+        <input
+          type="button"
+          class="table-event tablebutton overlay interactive trigger-area"
+          value=" "
+        />
+      </section>
+    </main>
+    <footer>
+      <img
+        src="styles/assets/images/Among_Us_cover_art.jpg"
+        alt="Cover art Among Us"
+        class="background"
+      />
+      <section class="gif-container">
+        <img
+          src="styles/assets/images/blue_walking.gif"
+          alt="Blue walking gif"
+          class="animated-gif"
+        />
+        <script src="scripts/timeline.js"></script>
+      </section>
+    </footer>
+  </body>
+</html>

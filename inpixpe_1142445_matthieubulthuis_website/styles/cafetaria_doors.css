@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    top: -20px;
+    animation: moveAcross 5s linear forwards;
+    z-index: -1;
+}
+
+.star::before {
+    content: "\f005";
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    background-color: #1400ee49;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 10px;
+    border: 1px solid #3d4a4a49;
+}
+#form label {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+
+#form input{
+    border-radius: 10px;
+    border: 1px solid #3d4a4a49;
+    background-color: #3d4a4a49;
+    color: #000000;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    font-family: "VCR OSD Mono", monospace;
+}
+
+#form button[type="submit"] {
+    border-radius: 10px;
+    border: 1px solid #c1b8f78e;
+    background-color: #3d4a4a49;
+    color: rgb(101, 179, 159);
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: "VCR OSD Mono", monospace;
+}
+
+#form button[type="submit"]:hover {
+    background-color: #2f3838;
+    color: #00000049;
+}
+        
+    
+
+
+@keyframes moveAcross {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100vw) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .star {
+        font-size: 8px;
+    }
+
+}

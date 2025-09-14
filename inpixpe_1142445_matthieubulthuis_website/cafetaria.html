@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website Matthieu Bulthuis</title>
+    <link rel="stylesheet" href="styles/cafetaria.css" />
+  </head>
+  <body>
+    <header>
+      <section class="headers">
+        <a href="cafetaria.html" class="interactive active">Hoofdpagina</a>
+        <a href="blogs.html" class="interactive">Blogpagina</a>
+        <a href="timeline.html" class="interactive">Tijdlijn</a>
+      </section>
+    </header>
+    <main>
+      <section class="timeline" id="interactive-timeline">
+        <a href="timeline.html" class="tijdlijnbutton interactive">
+          Tijdlijnpagina
+        </a>
+        <section class="buttons-timeline">
+          <button class="timeline-event interactive" data-blog-week="1">
+            Week 1
+          </button>
+          <button class="timeline-event interactive" data-blog-week="2">
+            Week 2
+          </button>
+          <button class="timeline-event interactive" data-blog-week="3">
+            Week 3
+          </button>
+          <button class="timeline-event interactive" data-blog-week="4">
+            Week 4
+          </button>
+          <button class="timeline-event interactive" data-blog-week="5">
+            Week 5
+          </button>
+        </section>
+      </section>
+      <section class="blog" id="interactive-blog">
+        <a href="blogs.html" class="blogbutton interactive"> Blogpagina </a>
+        <section class="buttons-blog">
+          <button class="blog-event interactive" data-blog-week="1">
+            Week 1
+          </button>
+          <button class="blog-event interactive" data-blog-week="2">
+            Week 2
+          </button>
+          <button class="blog-event interactive" data-blog-week="3">
+            Week 3
+          </button>
+          <button class="blog-event interactive" data-blog-week="4">
+            Week 4
+          </button>
+          <button class="blog-event interactive" data-blog-week="5">
+            Week 5
+          </button>
+        </section>
+      </section>
+
+      <section class="buttons-info">
+        <button class="informatie interactive" data-week="1">Intro</button>
+        <button class="informatie interactive" data-week="2">
+          De opdracht
+        </button>
+        <button class="informatie interactive" data-week="3">De groep</button>
+        <button class="informatie interactive" data-week="4">
+          Mijn ervaring
+        </button>
+        <button class="informatie interactive" data-week="5">Leermoment</button>
+      </section>
+      <section class="display">
+        <article id="display">
+          Je kan over 1 van de bovenstaande 5 onderwerpen hoveren om meer te
+          lezen hierover <br />
+          Ook kan je vanuit hier navigeren anar andere pagina's. Hiervoor kan je
+          gebruik maken van de verschillende vormen van navigatie zoals:
+          <ul>
+            <li>De balk bovenin</li>
+            <li>De tafels reachsbovenin</li>
+            <li>De menu's hierboven van de tijdlijnpagina en de blogpagina</li>
+          </ul>
+        </article>
+      </section>
+      <section class="full_cafetaria">
+        <img
+          src="styles/assets/images/desktop_cafetaria.png"
+          alt="cafetaria uit Among Us"
+          class="cafetaria_img"
+        />
+        <img
+          src="styles/assets/images/Yellow_task_arrow.webp"
+          alt="Yello task arrow"
+          class="overlay arrow interactive"
+        />
+        <img
+          src="styles/assets/images/avatar.png"
+          alt="Blauwe avatar van Among Us"
+          class="overlay avatar"
+        />
+        <form action="timeline.html">
+          <input
+            type="submit"
+            class="table-event tabletime overlay interactive"
+            value="Timeline"
+          />
+        </form>
+        <form action="blogs.html">
+          <input
+            type="submit"
+            class="table-event tableblog overlay interactive"
+            value="Blogs"
+          />
+        </form>
+        <input
+          type="button"
+          class="table-event tablebutton overlay interactive trigger-area"
+          value=" "
+        />
+      </section>
+    </main>
+    <footer>
+      <img
+        src="styles/assets/images/Among_Us_cover_art.jpg"
+        alt="Cover art Among Us"
+        class="background"
+      />
+      <section class="gif-container">
+        <img
+          src="styles/assets/images/blue_walking.gif"
+          alt="Blue walking gif"
+          class="animated-gif"
+        />
+        <script src="scripts/cafetaria.js"></script>
+      </section>
+    </footer>
+  </body>
+</html>
